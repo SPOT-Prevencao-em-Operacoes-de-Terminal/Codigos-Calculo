@@ -25,22 +25,22 @@ else:
     uuid_atual = uuid.getnode()
 
 
-# def obter_id_maquina(uuid_maquina):
-#     sql = "SELECT id_servidor FROM servidor WHERE uuid = %s"
-#     cursor.execute(sql, (uuid_maquina,))
-#     resultado = cursor.fetchone()
+def obter_id_maquina(uuid_maquina):
+    sql = "SELECT id_servidor FROM servidor WHERE uuid = %s"
+    cursor.execute(sql, (uuid_maquina,))
+    resultado = cursor.fetchone()
 
-#     print(f"Resultado da busca por UUID: {resultado}")
-#     if resultado:
-#         return resultado[0]
-#     else:
-#         raise ValueError(
-#             f"Máquina com uuid '{uuid_maquina}' não foi encontrada na tabela Servidor."
-#         )
+    print(f"Resultado da busca por UUID: {resultado}")
+    if resultado:
+        return resultado[0]
+    else:
+        raise ValueError(
+            f"Máquina com uuid '{uuid_maquina}' não foi encontrada na tabela Servidor."
+        )
 
 
-# fk_maquina = obter_id_maquina(uuid_atual)
-fk_maquina = 1
+fk_maquina = obter_id_maquina(uuid_atual)
+
 
 def verificacao_limites(fkMaquina):
     sql = "SELECT fk_servidor FROM configuracao WHERE fk_servidor = %s"
