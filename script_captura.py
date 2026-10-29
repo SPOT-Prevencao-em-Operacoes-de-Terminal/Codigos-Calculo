@@ -8,8 +8,8 @@ import psutil as p
 config = {
     "host": "32.200.0.73",
     "port": 3306,
-    "user": "",
-    "password": "",
+    "user": "user_SPOT",
+    "password": "Spot2026!",
     "database": "spot_bd",
 }
 
