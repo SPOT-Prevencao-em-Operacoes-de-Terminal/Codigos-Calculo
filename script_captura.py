@@ -6,7 +6,7 @@ import mysql.connector
 import psutil as p
 
 config = {
-    "host": "localhost",
+    "host": "32.200.0.73",
     "port": 3306,
     "user": "",
     "password": "",
