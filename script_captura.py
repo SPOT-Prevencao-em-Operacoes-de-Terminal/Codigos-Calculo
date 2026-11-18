@@ -6,10 +6,10 @@ import mysql.connector
 import psutil as p
 
 config = {
-    "host": "32.200.0.73",
+    "host": "localhost",
     "port": 3306,
     "user": "user_SPOT",
-    "password": "Spot2026!",
+    "password": "Spot@2026",
     "database": "spot_bd",
 }
 
@@ -22,7 +22,7 @@ if sistema != "Linux":
     import machineid  
     uuid_atual = machineid.id()
 else:
-    uuid_atual = uuid.getnode()
+    uuid_atual = str(uuid.getnode())
 
 
 def obter_id_maquina(uuid_maquina):
@@ -82,7 +82,7 @@ def insert_leitura(fkMaquina):
             if sistema != "Linux":
                 uso_disco = p.disk_usage('C:\\').percent 
             else: 
-                uso_disco = p.disk_usage('/').percent+80
+                uso_disco = p.disk_usage('/').percent
 
             leituras = [
                 (uso_cpu, 1, "CPU"),
